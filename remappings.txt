@@ -1,2 +1,3 @@
 ds-test/=lib/ds-test/src/
 beefy/=lib/beefy-contracts/contracts/
+@openzeppelin/=lib/openzeppelin-contracts/
