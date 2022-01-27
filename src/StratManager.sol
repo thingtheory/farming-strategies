@@ -3,8 +3,9 @@ pragma solidity ^0.8.6;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
+import "./interfaces/IStratManager.sol";
 
-contract StratManager is Ownable, Pausable {
+contract StratManager is IStratManager, Ownable, Pausable {
     /**
      * @dev Beefy Contracts:
      * {keeper} - Address to manage a few lower risk features of the strat
@@ -14,8 +15,8 @@ contract StratManager is Ownable, Pausable {
      */
     address public keeper;
     address public strategist;
-    address public unirouter;
-    address public vault;
+    address public override unirouter;
+    address public override vault;
     address public beefyFeeRecipient;
 
     /**
@@ -91,5 +92,5 @@ contract StratManager is Ownable, Pausable {
      * @dev Function to synchronize balances before new user deposit.
      * Can be overridden in the strategy.
      */
-    function beforeDeposit() external virtual {}
+    function beforeDeposit() external virtual override {}
 }

@@ -11,6 +11,6 @@ interface IVault is IERC20 {
     function getPricePerFullShare() external view returns (uint256);
     function upgradeStrat() external;
     function balance() external view returns (uint256);
-    function want() external view returns (IERC20);
+    function underlying() external view returns (IERC20);
     function strategy() external view returns (IStrategy);
 }
