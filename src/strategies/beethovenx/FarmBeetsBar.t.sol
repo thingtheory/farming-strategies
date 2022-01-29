@@ -146,7 +146,7 @@ contract FarmBeetsBarTest is DSTest {
     (uint balAfter, uint pendingAfter) = chef.userInfo(basePID, address(strat));
     // it withdraws the requested amount of underlying
     assertEq(bal, balAfter);
-    // it only withdraws/harvets from the masterchef if needed
+    // it only withdraws/harvests from the masterchef if needed
     assertEq(pending, pendingAfter);
   }
 

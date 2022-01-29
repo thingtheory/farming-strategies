@@ -25,7 +25,6 @@ contract FarmBeetsBar is BeethovenBaseStrat {
 
     // Beethoven-X
     bytes32 public fBeetsPoolID;
-    //address[] public lpTokens;
 
     constructor(
         uint256 _basePID,
@@ -35,7 +34,7 @@ contract FarmBeetsBar is BeethovenBaseStrat {
         address _balancerVault,
         address _beets,
         bytes32 _fBeetsPoolID
-    ) BeethovenBaseStrat(_basePID, _underlying, _chef, _vault, _balancerVault, _beets, _fBeetsPoolID) {
+    ) BeethovenBaseStrat(_basePID, _underlying, _chef, _vault, _balancerVault, _beets) {
         fBeetsPoolID = _fBeetsPoolID;
 
         (address fBeetsBPT_,) = IBalancerVault(balancerVault).getPool(fBeetsPoolID);

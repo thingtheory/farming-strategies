@@ -34,7 +34,6 @@ abstract contract BeethovenBaseStrat is IStrategy, Ownable, Pausable {
     // Beethoven-X
     IBalancerVault.SwapKind public swapKind;
     IBalancerVault.FundManagement public funds;
-    bytes32 public underlyingPoolID;
     address[] public lpTokens;
 
     bool public harvestOnDeposit;
@@ -51,8 +50,7 @@ abstract contract BeethovenBaseStrat is IStrategy, Ownable, Pausable {
         address _chef,
         address _vault,
         address _balancerVault,
-        address _beets,
-        bytes32 _underlyingPoolID
+        address _beets
     ) {
         basePID = _basePID;
         underlying = IERC20(_underlying);
@@ -60,7 +58,6 @@ abstract contract BeethovenBaseStrat is IStrategy, Ownable, Pausable {
         vault = _vault;
         balancerVault = _balancerVault;
         beets = IERC20(_beets);
-        underlyingPoolID = _underlyingPoolID;
     }
 
     // calculate the total 'underlying' held by the strat.
